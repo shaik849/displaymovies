@@ -30,7 +30,7 @@ const displayMovies = (movies) => {
 sortSelect.addEventListener("change", () => {
   const order = sortSelect.value;
   const sortedMovies = [...movies].sort((a, b) =>
-    order === "asc" ? a.imdbRating - b.imdbRating : b.imdbRating - a.imdbRating
+    order === "asc" ? a.imdb_rating - b.imdb_rating : b.imdb_rating - a.imdb_rating
   );
   displayMovies(sortedMovies);
 });
@@ -42,7 +42,7 @@ applyFilterBtn.addEventListener("click", (e) => {
       alert("Please select a valid year");
       return; // Stop further execution if input is invalid
     }
-    const filteredMovies = movies.filter((movie) => movie.releaseYear > year);
+    const filteredMovies = movies.filter((movie) => movie.release_year > year);
     displayMovies(filteredMovies) ;
   });
   
