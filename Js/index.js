@@ -48,4 +48,4 @@ applyFilterBtn.addEventListener("click", (e) => {
   
  
 fetchMovies();
-console.log(fetchMovies())
+
