@@ -28,6 +28,7 @@ const displayMovies = (movies) => {
   
   
 sortSelect.addEventListener("change", () => {
+  
   const order = sortSelect.value;
   const sortedMovies = [...movies].sort((a, b) =>
     order === "asc" ? a.imdb_rating - b.imdb_rating : b.imdb_rating - a.imdb_rating
