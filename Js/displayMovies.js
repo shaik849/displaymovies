@@ -42,8 +42,8 @@ applyFilterBtn.addEventListener("click", (e) => {
       return; // Stop further execution if input is invalid
     }
     const filteredMovies = movies.filter((movie) => movie.releaseYear > year);
-    displayMovies(filteredMovies);
+    displayMovies(filteredMovies) ;
   });
   
-
+ 
 fetchMovies();
