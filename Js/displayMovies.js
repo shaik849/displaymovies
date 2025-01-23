@@ -12,19 +12,20 @@ const fetchMovies = async () => {
 };
 
 const displayMovies = (movies) => {
-  movieGrid.innerHTML = "";
-  movies.forEach((movie) => {
-    const movieDiv = document.createElement("div");
-    movieDiv.classList.add("movie");
-    movieDiv.innerHTML = `
-      <h3>${movie.title}</h3>
-      <img src="${movie.image}" alt="${movie.title}" />
-      <p>Release Year: ${movie.releaseYear}</p>
-      <p>IMDb Rating: ${movie.imdbRating}</p>
-    `;
-    movieGrid.appendChild(movieDiv);
-  });
-};
+    movieGrid.innerHTML = "";
+    movies.forEach((movie) => {
+      const movieDiv = document.createElement("div");
+      movieDiv.classList.add("movie");
+      movieDiv.innerHTML = `
+        <h3>${movie.name}</h3>
+        <img src="${movie.image_url}" alt="${movie.name}" />
+        <p>Release Year: ${movie.release_year}</p>
+        <p>IMDb Rating: ${movie.imdb_rating}</p>
+      `;
+      movieGrid.appendChild(movieDiv);
+    });
+  };
+  
 
 sortSelect.addEventListener("change", () => {
   const order = sortSelect.value;
