@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/index.css">
+
+  <title>Movie List</title>
+</head>
+<body>
+    <div class="container">
+      <h1>Movies</h1>
+      <div class="controls">
+        <label for="sort">Sort by:</label>
+        <select id="sort">
+          <option value="">Select</option>
+          <option value="asc">IMDb Rating (Low to High)</option>
+          <option value="desc">IMDb Rating (High to Low)</option>
+        </select>
+  
+        <label for="filter">Filter (Year >):</label>
+        <input type="number" id="filter" />
+        <button id="applyFilter">Apply Filter</button>
+      </div>
+  
+      <div class="grid" id="movieGrid"></div>
+    </div>
+    <script src="./Js/index.js"></script>
+  </body>
+  
+</html>
