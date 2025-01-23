@@ -26,7 +26,7 @@ const displayMovies = (movies) => {
     });
   };
   
-
+  
 sortSelect.addEventListener("change", () => {
   const order = sortSelect.value;
   const sortedMovies = [...movies].sort((a, b) =>
@@ -36,15 +36,26 @@ sortSelect.addEventListener("change", () => {
 });
 
 applyFilterBtn.addEventListener("click", (e) => {
-    const year = parseInt(filterInput.value, 10);
-    if (!year) {
-      e.preventDefault();
-      alert("Please select a valid year");
-      return; // Stop further execution if input is invalid
-    }
-    const filteredMovies = movies.filter((movie) => movie.release_year > year);
-    displayMovies(filteredMovies) ;
-  });
+  const year = parseInt(filterInput.value, 10);
+  if (!year) {
+    e.preventDefault();
+    alert("Please select a valid year");
+    return; // Stop further execution if input is invalid
+  }
+  
+  // First filter the movies based on the year
+  const filteredMovies = movies.filter((movie) => movie.release_year > year);
+  
+  // Then, apply the sorting logic to the filtered movies
+  const order = sortSelect.value;
+  const sortedMovies = filteredMovies.sort((a, b) =>
+    order === "asc" ? a.imdb_rating - b.imdb_rating : b.imdb_rating - a.imdb_rating
+  );
+  
+  // Display the sorted and filtered movies
+  displayMovies(sortedMovies);
+});
+
   
  
 fetchMovies();
